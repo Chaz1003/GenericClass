@@ -5,17 +5,11 @@ public class Arithmetic {
     Object num1, num2;
     public Arithmetic(Object num1, Object num2) {
 
-        if(num1 instanceof Integer || num1 instanceof  Double || num1 instanceof Long
-                || num1 instanceof Short || num1 instanceof Float){
-            if(num2 instanceof Integer || num2 instanceof  Double || num2 instanceof Long
-               || num2 instanceof Short || num2 instanceof Float) {
+        if(num1 instanceof Number && num2 instanceof Number) {
                 this.num1 = num1;
                 this.num2 = num2;
-            }else{
-                throw new ClassCastException("One of the input is not a number");
-            }
         }else{
-            throw new ClassCastException("One of the input is not a number");
+            throw new ClassCastException("One of the input is not a number!");
         }
     }
     public double add(){
